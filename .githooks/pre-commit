@@ -1,0 +1,6 @@
+#!/bin/sh
+# 커밋 전에 비밀값(API 키, 비밀번호)이 섞여 들어가지 않았는지 검사합니다.
+node scripts/check-secrets.mjs || {
+  echo "커밋을 멈췄습니다. 위의 파일에서 비밀값을 지운 뒤 다시 커밋하세요."
+  exit 1
+}
